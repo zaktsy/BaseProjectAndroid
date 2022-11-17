@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name" translatable="false">Timetable for HSE</string>
+    <string name="timetable_for_students">Timetable for students</string>
+    <string name="timetable_for_teachers">Timetable for teachers</string>
+    <string name="choose_group">Choose group</string>
+    <string name="now">"Now: "</string>
+    <string name="timetable_for_day">Timetable for day</string>
+    <string name="timetable_for_week">Timetable for week</string>
+    <string name="subject">Subject</string>
+    <string name="no_classes">No classes</string>
+    <string name="classroom">Classroom</string>
+    <string name="corp">Building</string>
+    <string name="teacher">Teacher</string>
+    <string name="choose_teacher">Choose Teacher</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="timetable_for_students">Расписание для студетов</string>
+    <string name="timetable_for_teachers">Расписание для преподавателей</string>
+    <string name="choose_group">Выберите группу:</string>
+    <string name="now">"Сейчас: "</string>
+    <string name="timetable_for_day">Расписание на день</string>
+    <string name="timetable_for_week">Расписание на неделю</string>
+    <string name="subject">Дисциплина</string>
+    <string name="no_classes">Нет пар</string>
+    <string name="classroom">Кабинет</string>
+    <string name="corp">Корпус</string>
+    <string name="teacher">Преподаватель</string>
+    <string name="choose_teacher">Выберите преподавателя</string>
+</resources>
