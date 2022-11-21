@@ -17,10 +17,13 @@ public class MainActivity extends AppCompatActivity {
 
         Button forStudentsButton = findViewById(R.id.tmtblstudents);
         Button forTeachersButton = findViewById(R.id.tmtblTeachers);
+        Button settingsButton = findViewById(R.id.settings);
 
         forStudentsButton.setOnClickListener(this::showStudentActivity);
 
         forTeachersButton.setOnClickListener(this::showTeacherActivity);
+
+        settingsButton.setOnClickListener(this::showSettingsActivity);
     }
 
     private void showTeacherActivity(View view) {
@@ -33,4 +36,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void showSettingsActivity(View view) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
 }

@@ -12,4 +12,13 @@
     <string name="corp">Корпус</string>
     <string name="teacher">Преподаватель</string>
     <string name="choose_teacher">Выберите преподавателя</string>
+    <string name="settings">Настройки</string>
+    <string name="from_gallery">Выбрать в галерее</string>
+    <string name="your_photo">Ваше фото</string>
+    <string name="take_photo">Сделать фото</string>
+    <string name="your_name">Ваше имя</string>
+    <string name="light_level">Уровень освещенности:</string>
+    <string name="save_settings">Сохранить настройки</string>
+    <string name="cancel">Отменить</string>
+    <string name="settings_saved">Настройки сохранены</string>
 </resources>
