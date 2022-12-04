@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -29,7 +28,6 @@ public class TeacherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_student);
 
         updateClassInfo(InitUtils.initData(this));
-        groupsSpinner = findViewById(R.id.choose_group_spinner);
         current_time = findViewById(R.id.current_time);
 
         current_time.setText(InitUtils.iniTime());

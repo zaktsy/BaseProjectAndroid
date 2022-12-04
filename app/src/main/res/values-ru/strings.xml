@@ -2,7 +2,7 @@
 <resources>
     <string name="timetable_for_students">Расписание для студетов</string>
     <string name="timetable_for_teachers">Расписание для преподавателей</string>
-    <string name="choose_group">Выберите группу:</string>
+    <string name="choose_student">ФИО студента</string>
     <string name="now">"Сейчас: "</string>
     <string name="timetable_for_day">Расписание на день</string>
     <string name="timetable_for_week">Расписание на неделю</string>
@@ -11,7 +11,7 @@
     <string name="classroom">Кабинет</string>
     <string name="corp">Корпус</string>
     <string name="teacher">Преподаватель</string>
-    <string name="choose_teacher">Выберите преподавателя</string>
+    <string name="choose_teacher">ФИО преподавателя</string>
     <string name="settings">Настройки</string>
     <string name="from_gallery">Выбрать в галерее</string>
     <string name="your_photo">Ваше фото</string>
@@ -21,4 +21,6 @@
     <string name="save_settings">Сохранить настройки</string>
     <string name="cancel">Отменить</string>
     <string name="settings_saved">Настройки сохранены</string>
+    <string name="warning_null_name">Пожалуйста, введите ваше имя</string>
+    <string name="no_data_message">Нет данных</string>
 </resources>

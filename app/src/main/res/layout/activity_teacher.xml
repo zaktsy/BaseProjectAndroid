@@ -1,111 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp"
     tools:context=".StudentActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/choose_group_textview"
+            style="@style/mainTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_teacher" />
+
+        <EditText
+            android:id="@+id/teacher_textview"
+            style="@style/mainTextView"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:inputType="textPersonName" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/mainTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/now" />
+
+            <TextView
+                android:id="@+id/current_time"
+                style="@style/secondaryTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/have_class"
+            style="@style/mainTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/class_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/subject"
+                style="@style/secondaryTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/subject" />
+
+            <TextView
+                android:id="@+id/classroom"
+                style="@style/secondaryTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/corp"
+                style="@style/secondaryTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/teacher"
+                style="@style/secondaryTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/mainButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/choose_group_textview"
-                style="@style/mainTextView"
-                android:text="@string/choose_teacher"/>
-            <Spinner
-                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="@string/timetable_for_day" />
+
+            <Button
+                style="@style/mainButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/choose_group_spinner"
-                style="@style/mainTextView"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/mainTextView"
-                    android:text="@string/now"
-                    android:layout_marginEnd="10dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/secondaryTextView"
-                    android:id="@+id/current_time"/>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/mainTextView"
-                android:id="@+id/have_class"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/class_info">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/secondaryTextView"
-                    tools:text="@string/subject"
-                    android:id="@+id/subject"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/secondaryTextView"
-                    android:id="@+id/classroom"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/secondaryTextView"
-                    android:id="@+id/corp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/secondaryTextView"
-                    android:id="@+id/teacher"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_margin="10dp"
-                    style="@style/mainButton"
-                    android:text="@string/timetable_for_day"/>
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_margin="10dp"
-                    style="@style/mainButton"
-                    android:text="@string/timetable_for_week"/>
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="@string/timetable_for_week" />
         </LinearLayout>
     </LinearLayout>
 

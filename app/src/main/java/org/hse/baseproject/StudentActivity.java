@@ -3,45 +3,55 @@ package org.hse.baseproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.List;
 import java.util.Map;
 
 public class StudentActivity extends AppCompatActivity {
 
-    private Spinner groupsSpinner;
-    private List<Group> groups;
+    private static final String EMPTY_STRING = "";
+    private final static String USER_NAME_KEY = "userName";
+
+    private TextView studentName;
     private TextView haveClass;
     private TextView subject;
     private TextView classroom;
     private TextView corp;
     private TextView teacher;
     private TextView current_time;
+    private PreferenceManager preferenceManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
 
+        Button timetableForDay = findViewById(R.id.timetable_for_day_button);
+        Button timetableForWeek = findViewById(R.id.timetable_for_week_button);
+        timetableForDay.setOnClickListener(v -> onTimetableButtonClicked(ScheduleType.DAY));
+        timetableForWeek.setOnClickListener(v -> onTimetableButtonClicked(ScheduleType.WEEK));
+
         updateClassInfo(InitUtils.initData(this));
-        groupsSpinner = findViewById(R.id.choose_group_spinner);
         current_time = findViewById(R.id.current_time);
-
+        studentName = findViewById(R.id.student_textview);
+        preferenceManager = new PreferenceManager(this);
+        
         current_time.setText(InitUtils.iniTime());
+        studentName.setText(getNameOrDefault());
+        
+        updateTimetableForNow();
+    }
 
-        groups = InitUtils.initGroups();
+    private void updateTimetableForNow() {
+    }
 
-        ArrayAdapter<?> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, groups);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        groupsSpinner.setAdapter(adapter);
-        groupsSpinner.setOnItemSelectedListener(new GroupsSpinnerListener(this));
+    private String getNameOrDefault() {
+        return preferenceManager.getValue(USER_NAME_KEY, EMPTY_STRING);
     }
 
     private void updateClassInfo(@NonNull Map<String, String> classInfo) {
@@ -59,5 +69,23 @@ public class StudentActivity extends AppCompatActivity {
 
         teacher = findViewById(R.id.teacher);
         teacher.setText(classInfo.get("teacher"));
+    }
+
+    private void onTimetableButtonClicked(ScheduleType scheduleType){
+
+        String name = studentName.getText().toString();
+        if (name.equals(EMPTY_STRING)){
+            Toast toast = new Toast(this);
+            toast.setText(R.string.warning_null_name);
+            toast.show();
+
+            return;
+        }
+
+        Intent intent = new Intent(this, ScheduleActivity.class);
+        intent.putExtra(ScheduleActivity.NAME, name);
+        intent.putExtra(ScheduleActivity.MODE, ScheduleMode.STUDENT);
+        intent.putExtra(ScheduleActivity.TYPE, scheduleType);
+        startActivity(intent);
     }
 }
